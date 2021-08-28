@@ -13,6 +13,12 @@ import matplotlib.pyplot as plt
 app = Flask(__name__)
 
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    result = {}
+    result['message'] = "welcome to image processing"
+    return result
+
 @app.route('/', methods=['POST'])
 def upload_file():
     images = request.files.getlist('images')
