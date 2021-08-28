@@ -16,6 +16,7 @@ app = Flask(__name__)
 @app.route('/ping', methods=['GET'])
 def ping():
     result = {}
+    result['version'] = "0.1"
     result['message'] = "welcome to image processing"
     return result
 
